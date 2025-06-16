@@ -1,4 +1,5 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
 import pandas as pd
 import matplotlib.pyplot as plt
 import joblib
@@ -16,6 +17,12 @@ st.write("Kalkulator interaktif yang membolehkan pengguna membandingkan kos pemi
 "Masukkan butiran kereta di bawah untuk meramal Jumlah Kos Pemilikan (TCO) setiap tahun.")
 
 st.divider()
+
+selected = option_menu(
+    menu_title=None,
+    options=["TCO Calculator", "Carbon Emission Calculator"],
+    orientation = "horizontal",
+)
 
 col1, col2 = st.columns(2)
 
